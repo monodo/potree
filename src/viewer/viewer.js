@@ -903,7 +903,6 @@ Potree.Viewer = function(domElement, args){
 	this.toggleMap = function(){
 		var map = $('#potree_map');
 		map.toggle(100);
-		
 	};
 
 	this.loadGUI = function(){
@@ -919,11 +918,13 @@ Potree.Viewer = function(domElement, args){
 		//viewer.renderArea.appendChild(imgMenuToggle);
 		
 		var imgMapToggle = document.createElement("img");
+        console.log(Potree.resourcePath)
 		imgMapToggle.src = new URL(Potree.resourcePath + "/icons/map_icon.png").href;
+        console.log(Potree.resourcePath + "/icons/map_icon.png");
 		imgMapToggle.style.display = "none";
 		imgMapToggle.onclick = scope.toggleMap;
 		imgMapToggle.id = "potree_map_toggle";
-		//viewer.renderArea.appendChild(imgMapToggle);
+		viewer.renderArea.appendChild(imgMapToggle);
 		
 		viewer.renderArea.insertBefore(imgMapToggle, viewer.renderArea.children[0]);
 		viewer.renderArea.insertBefore(imgMenuToggle, viewer.renderArea.children[0]);
@@ -944,7 +945,7 @@ Potree.Viewer = function(domElement, args){
 		
         i18n.init({ 
             lng: 'en',
-            resGetPath: '../resources/lang/__lng__/__ns__.json',
+            resGetPath: 'potree/resources/lang/__lng__/__ns__.json',
             preload: ['en', 'fr', 'de'],
             getAsync: true,
             debug: true

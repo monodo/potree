@@ -26,7 +26,7 @@ if(document.currentScript.src){
 	console.error("Potree was unable to find its script path using document.currentScript. Is Potree included with a script tag? Does your browser support this function?");
 }
 
-Potree.resourcePath = Potree.scriptPath + "/resources";
+Potree.resourcePath = Potree.scriptPath + "resources";
 
 
 
